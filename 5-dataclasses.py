@@ -9,9 +9,16 @@ class Person:
     name: str
     dob: date
     preferred_operating_system: str
+    
+    def is_adult(self) -> bool:
+        today = date.today()
+        age = today.year - self.dob.year        
+        return age >= 18
 
 imran = Person("Imran", date(2000, 1, 2), "Ubuntu")  # We can call this constructor - @dataclass generated it for us.
 print(imran)  
 
 imran2 = Person("Imran", date(2001, 1, 2), "Ubuntu")
 print(imran == imran2)  
+
+print(imran.is_adult())
