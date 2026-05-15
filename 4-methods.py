@@ -18,8 +18,13 @@ class Person:
 
     def is_adult(self) -> bool:
         today = date.today()
-        age = today.year - self.dob.year        
+        age = today.year - self.dob.year     
+        
+        # not yet bday -> minus 1 in age
+        if (today.month, today.day) < (self.dob.month, self.dob.day):
+            age -= 1
+               
         return age >= 18
 
-imran = Person("Imran", date(2000, 1, 1), "Ubuntu")
+imran = Person("Imran", date(2008, 12, 12), "Ubuntu")
 print(imran.is_adult())
