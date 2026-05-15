@@ -20,7 +20,7 @@ print(is_adult(imran))
 
 # Write a new function in the file that accepts a Person as a parameter and tries to access a property that doesn’t exist. Run it through mypy and check that it does report an error.
 
-def isMale(person: Person) -> bool:
+def is_male(person: Person) -> bool:
     return person.gender == "male"
 
 # Returns:
